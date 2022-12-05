@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 550px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-contianer {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px 15px;
+  box-sizing: border-box;
+}
+
+.mode-select-box {
+  text-transform: capitalize;
+  height: 42px;
+  width: 312px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 9px 13px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-image: url('./images/dropdown-arrow.png');
+  background-repeat: no-repeat;
+  background-position: right 10px top 15px;
+}
+
+.option {
+  display: block;
+  height: 42px;
+  width: 312px;
+  padding: 9px 13px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: #fff;
+}
+
+.option:hover {
+  background: #1f2937;
+  color: white;
+  width: 100%;
+}
+
+.option-container {
+  margin-top: 15px;
+  width: 312px;
+  position: relative;
+  left: -14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.option:nth-child(1):hover {
+  border-radius: 6px 6px 0 0;
+}
+
+.option:nth-last-child(1):hover {
+  border-radius: 0 0 6px 6px;
+  height: 100%;
+}
+
+.display-none {
+  display: none;
+}
+
+.color-input {
+  height: 42px;
+  width: 61px;
+  border: none;
+}
+
+.current-selected-option {
+  font-weight: 800;
+}
+
+.checked-mode {
+  background-image: url('./images/selected-check.png');
+  background-repeat: no-repeat;
+  background-position: right 10px top 15px;
+}
+
+.color-scheme-btn {
+  height: 42px;
+  box-sizing: border-box;
+  padding: 13px 11px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  background: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0px 1px 2px 0px #00000032;
+}
+
+.color-scheme-btn:active {
+  box-shadow: none;
+  height: 40px;
+}
+
+.color-container {
+  display: flex;
+}
+
+.color {
+  width: 110px;
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.color-item {
+  width: 110px;
+  height: 415px;
+  cursor: pointer;
+}
+
+.hex {
+  padding: 11px 0;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.copied-text {
+  margin-top: 20px;
+  height: 50px;
+}

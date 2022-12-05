@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color scheme generator</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-contianer">
+        <input type="color" id="color" class="color-input" />
+        <div id="scheme-mode" class="mode-select-box" name="scheme-mode">
+          <div
+            class="selected-option"
+            id="selected-option"
+            data-value="monochrome"
+          >
+            monochrome
+          </div>
+          <div class="option-container display-none" id="option-container">
+            <div data-value="monochrome" class="option">monochrome</div>
+            <div data-value="monochrome-dark" class="option">
+              monochrome dark
+            </div>
+            <div data-value="monochrome-light" class="option">
+              monochrome light
+            </div>
+            <div data-value="analogic" class="option">analogic</div>
+            <div data-value="complement" class="option">complement</div>
+            <div data-value="analogic-complement" class="option">
+              analogic complement
+            </div>
+            <div data-value="triad" class="option">triad</div>
+            <div data-value="quad" class="option">quad</div>
+          </div>
+        </div>
+        <button id="color-scheme-btn" class="color-scheme-btn">
+          Get color scheme
+        </button>
+      </div>
+      <div class="color-container" id="color-container">
+        <div class="color" id="color-1"></div>
+        <div class="color" id="color-2"></div>
+        <div class="color" id="color-3"></div>
+        <div class="color" id="color-4"></div>
+        <div class="color" id="color-5"></div>
+      </div>
+    </div>
+    <div class="copied-text">
+      <p id="copied-text" class="display-none">Copied to clipboard!</p>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
