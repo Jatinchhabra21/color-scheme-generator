@@ -2,19 +2,17 @@ const getColorSchemeBtn = document.getElementById('color-scheme-btn');
 const schemeModeSelectBox = document.getElementById('scheme-mode');
 const optionContainer = document.getElementById('option-container');
 const selectedOption = document.getElementById('selected-option');
-let currentSelectedOption = document.getElementById('selected-option');
+let currentSelectedOption = '';
 const colorContainer = document.getElementById('color-container');
 
 getColorSchemeBtn.addEventListener('click', getColorScheme);
 
 async function getColorScheme() {
   const hexColor = document.getElementById('color').value;
-  const schemeMode = document.getElementById('selected-option').dataset.value;
   const data = await fetch(
-    `https://www.thecolorapi.com/scheme?hex=${hexColor.substr(
-      1,
-      6
-    )}&mode=${schemeMode}&count=5`
+    `https://www.thecolorapi.com/scheme?hex=${hexColor.substr(1, 6)}&mode=${
+      selectedOption.dataset.value
+    }&count=5`
   ).then((response) => response.json());
   const colorContainerChild = Array.from(colorContainer.children);
   colorContainerChild.forEach((color, index) => {
@@ -36,8 +34,13 @@ schemeModeSelectBox.addEventListener('click', () => {
 });
 
 optionContainer.addEventListener('click', (event) => {
-  selectedOption.textContent = event.target.textContent;
-  selectedOption.dataset.value = event.target.dataset.value;
+  selectedOption.innerText =
+    event.target.innerText.split('\n').length > 1
+      ? selectedOption.innerText
+      : event.target.innerText;
+  selectedOption.dataset.value = event.target.dataset.value
+    ? event.target.dataset.value
+    : selectedOption.dataset.value;
   currentSelectedOption.classList.remove('current-selected-option');
   currentSelectedOption.classList.remove('checked-mode');
   currentSelectedOption = event.target;
